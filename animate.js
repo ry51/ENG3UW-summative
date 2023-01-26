@@ -321,25 +321,29 @@ function animate() {
             ctx.fillText(`LIFE [z]  Level: ${lifelevel}`, 60, 310)
             ctx.font = "15px Courier New"
             ctx.fillText("Increases your health by a stacking 15%.", 60, 330)
+            ctx.fillText("You are currently gaining " + lifelevel*15 + "% more health.", 60, 350)
         }
         if (stage >= 2) {
             ctx.font = "18px Courier New"
-            ctx.fillText(`POWER [x]  Level: ${powerlevel}`, 60, 360)
+            ctx.fillText(`POWER [x]  Level: ${powerlevel}`, 60, 380)
             ctx.font = "15px Courier New"
-            ctx.fillText("Increases your damage by a stacking 10%.", 60, 380)
+            ctx.fillText("Increases your damage by a stacking 10%.", 60, 400)
+            ctx.fillText("You are currently gaining " + powerlevel*10 + "% more damage.", 60, 420)
         }
         if (stage >= 3) {
             ctx.font = "18px Courier New"
-            ctx.fillText(`SPEED [c]  Level: ${speedlevel}`, 60, 410)
+            ctx.fillText(`SPEED [c]  Level: ${speedlevel}`, 60, 450)
             ctx.font = "15px Courier New"
-            ctx.fillText("Increases your speed by a stacking 15%.", 60, 430)
+            ctx.fillText("Increases your speed by a stacking 15%.", 60, 470)
+            ctx.fillText("You are currently gaining " + speedlevel*15 + "% more speed.", 60, 490)
         }
         if (stage >= 4) {
             ctx.font = "18px Courier New"
-            ctx.fillText(`GRAVITY [v]  Level: ${gravitylevel}`, 60, 460)
+            ctx.fillText(`GRAVITY [v]  Level: ${gravitylevel}`, 60, 520)
             ctx.font = "15px Courier New"
-            if (stage < 9) ctx.fillText("Increases speed, regen speed, and projectile count of rotating projectiles.", 60, 480)
-			else ctx.fillText("Enhances gravitational armor and also increases the strength of gravitational waves.", 60, 480)
+            if (stage < 9) ctx.fillText("Increases speed, regen speed, and projectile count of rotating projectiles.", 60, 540)
+			else ctx.fillText("Enhances gravitational armor and also increases the strength of gravitational waves.", 60, 540)
+            ctx.fillText("Gravity regens every " + (96 - 3*gravitylevel) + " frames, with " + Math.floor(10 + 0.5*gravitylevel) + " projectiles.", 60, 560)
         }
 	}
 	
